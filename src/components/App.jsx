@@ -2,16 +2,20 @@ import React, { useState } from "react";
 
 function App() {
     const [inputText, setInput] = useState("");
-    const [items, setItems] = useState([]);
+    const [todoitems, setItems] = useState([]);
 
     function handleChange(event){
         const inputevent = event.target.value;
-        setInput(inputevent)
+        setInput(inputevent);
     }
+
     function addItem(){
-        setItems(inputText);
+        setItems((previousitem) => {
+            return [ ...previousitem, inputText];
+        });
         setInput("");
     }
+
   return (
     <div className="container">
       <div className="heading">
@@ -25,7 +29,7 @@ function App() {
     </div>
       <div>
         <ul>
-          <li>{items}</li>
+            {todoitems.map((item) => <li>{item}</li> )}
         </ul>
       </div>
     </div>
