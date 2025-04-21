@@ -18,8 +18,12 @@ function App() {
     }
 
     function deleteItem(id) {
-            return console.log(id)
-        }
+        setItems((previousitem) => {
+            return previousitem.filter((item, index) => {
+                return index !== id
+            });
+        });
+    }
     
   return (
     <div className="container">

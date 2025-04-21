@@ -7,7 +7,7 @@ function ToDoItem(props) {
         return styleChange( !isMouseClick );
     }
     
-    return <div onClick={()=> {
+    return <div onClick = {() => {
             props.doneItem(props.id)
         }}>
         {/* <li onClick={onMouseClick} style = {{textDecoration : isMouseClick && "line-through"}}> */}
