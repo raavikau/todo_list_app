@@ -27,27 +27,21 @@ function App() {
     
   return (
     <div className="container">
-      <div className="heading">
-        <h1>To-Do List</h1>
-      </div>
-      <div className="form">
-        <input type="text" onChange={handleChange} value={inputText}/>
-        <button onClick={addItem}>
-            <span>Add</span>
-        </button>
+        <div className="heading">
+            <h1>To-Do List</h1>
         </div>
-      <div>
-        <ul>
-            {todoitems.map((item, index) => 
-            <ToDoItem 
-            key={index}
-            id={index}
-            text={item}
-            doneItem={deleteItem}
-            />
-             )}
-        </ul>
-      </div>
+        <div>
+            <ul>
+                {todoitems.map((item, index) => 
+                <ToDoItem 
+                key={index}
+                id={index}
+                text={item}
+                doneItem={deleteItem}
+                />
+                )}
+            </ul>
+        </div>
     </div>
   );
 }
